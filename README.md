@@ -87,3 +87,10 @@ Completing the project involves several steps:
 
 For more detail about each of these steps, see the project lesson.
 # Final_Project_UFSN
+
+# Test
+export TOKEN=`curl -d '{"email":"jessie@edukoya.com","password":"Jessie1!"}' -H "Content-Type: application/json" -X POST aa238b642fdd14971acfa3734fe03fdc-995654429.us-east-2.elb.amazonaws.com/auth  | jq -r '.token'`
+curl --request GET 'aa238b642fdd14971acfa3734fe03fdc-995654429.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
+
+# External IP-Address
+aa238b642fdd14971acfa3734fe03fdc-995654429.us-east-2.elb.amazonaws.com
