@@ -12,6 +12,9 @@ The Flask app that will be used for this project consists of a simple API with t
 
 The app relies on a secret set as the environment variable `JWT_SECRET` to produce a JWT. The built-in Flask server is adequate for local development, but not production, so you will be using the production-ready [Gunicorn](https://gunicorn.org/) server when deploying the app.
 
+### My jwt secret has been added to .env_file in the gitignore file
+JWT_SECRET='myjwtsecret'
+LOG_LEVEL=DEBUG
 
 
 ## Prerequisites
@@ -88,9 +91,15 @@ Completing the project involves several steps:
 For more detail about each of these steps, see the project lesson.
 # Final_Project_UFSN
 
+# Port Change
+I have changed the port from `port=8080` to `port=8090` to fix the parse error.
+
 # Test
 export TOKEN=`curl -d '{"email":"jessie@edukoya.com","password":"Jessie1!"}' -H "Content-Type: application/json" -X POST aa238b642fdd14971acfa3734fe03fdc-995654429.us-east-2.elb.amazonaws.com/auth  | jq -r '.token'`
 curl --request GET 'aa238b642fdd14971acfa3734fe03fdc-995654429.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
 
 # External IP-Address
 aa238b642fdd14971acfa3734fe03fdc-995654429.us-east-2.elb.amazonaws.com
+
+
+
